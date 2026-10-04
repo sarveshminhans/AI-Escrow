@@ -19,7 +19,7 @@ def chat():
   usage_count+=1
   client=InferenceClient(api_key=token)
   full_response=""
-  for message in client.chat_completion(model="meta-llama/Llama-3.2-1B-Instruct",messages=[{"role":"user","content":user_message}],max_tokens=500,stream=True):
+  for message in client.chat_completion(model="Qwen/Qwen2.5-7B-Instruct",messages=[{"role":"user","content":user_message}],max_tokens=500,stream=True):
    delta=getattr(message.choices[0].delta,"content",None)
    if delta:full_response+=delta
   return jsonify({"status":1,"response":full_response})
