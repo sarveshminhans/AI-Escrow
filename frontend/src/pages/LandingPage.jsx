@@ -1,0 +1,1 @@
+import SkullLanding from './SkullLanding';export default function LandingPage(){return <div className="relative bg-black"><SkullLanding/></div>}
